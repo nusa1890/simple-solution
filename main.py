@@ -1,4 +1,3 @@
-import flask
 import googleapiclient.discovery
 import numpy as np
 import os, json
@@ -45,7 +44,7 @@ def index():
     x = predict_json(project, region, model, instances, version)
     return jsonify(x[0])
 
-app.run()
+app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
 """pm10, so2, co, o3, no2 = np.dsplit(x, 5)
 print(pm10)
