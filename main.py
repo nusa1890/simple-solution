@@ -9,7 +9,7 @@ from flask import Flask, request, jsonify
 def predict_json(project, region, model, instances, version=None):
     # Create the ML Engine service object.
     # To authenticate set the environment variable
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/nusa/Documents/euphoric-fusion-312609-e20f53f87718.json"
+    #os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/nusa/Documents/euphoric-fusion-312609-e20f53f87718.json"
 
     prefix = "{}-ml".format(region) if region else "ml"
     api_endpoint = "https://{}.googleapis.com".format(prefix)
