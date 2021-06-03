@@ -43,13 +43,7 @@ def index():
     version = request.args.get('version')
 
     x = predict_json(project, region, model, instances, version)
-    return jsonify(x[0])
+    return jsonify(x[0][1])
 
-app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
-
-"""pm10, so2, co, o3, no2 = np.dsplit(x, 5)
-print(pm10)
-print(so2)
-print(co)
-print(o3)
-print(no2)"""
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
